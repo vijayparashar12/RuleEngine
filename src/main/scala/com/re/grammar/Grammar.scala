@@ -23,8 +23,7 @@ object Grammar {
       }
 
       rule.op match {
-        case eq: EQ => eq.execute(lhs, rhs)
-        case neq: NEQ => neq.execute(lhs, rhs)
+        case op: Operator => op.execute(lhs, rhs)
         case _ => false
       }
 
