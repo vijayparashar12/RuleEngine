@@ -11,7 +11,7 @@ object Grammar {
   type Result = AnyVal
 
 
-  implicit class RuleEngineEvaluator(rule: Rule) {
+  implicit class RuleEvaluator(rule: Rule) {
     def evaluate(): Boolean = {
       val lhs = rule.lhs match {
         case Rule(_,_,_) => rule.lhs.asInstanceOf[Rule].evaluate()

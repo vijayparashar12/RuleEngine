@@ -1,6 +1,6 @@
 package com.re
 
-import com.re.grammar.Grammar.RuleEngineEvaluator
+import com.re.grammar.Grammar.RuleEvaluator
 import com.re.grammar.{EQ, NEQ, Rule}
 
 
