@@ -18,6 +18,7 @@ object RuleEngine {
       case y: String => println(s"Some String $y")
       case _ => println("Some other type")
     }*/
+    println(1.asInstanceOf[Double])
     println(Rule(true, EQ(), true).evaluate())
     println(Rule(true, EQ(), false).evaluate())
 
@@ -26,5 +27,14 @@ object RuleEngine {
     val complexRule = Rule(trueRule, NEQ(), falseRule) //true
     val anotherComplexRule = Rule(trueRule, NEQ(), complexRule)
     print(anotherComplexRule.evaluate)
+    println(s"Vijay" > "OMG")
+
+    /*val test = 1
+    val x = test match {
+      case i: Int => "Int"
+      case d: Double => "Double"
+      case Number => "Number"
+
+    }*/
   }
 }
