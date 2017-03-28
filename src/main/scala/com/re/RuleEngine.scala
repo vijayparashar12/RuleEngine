@@ -19,13 +19,13 @@ object RuleEngine {
       case _ => println("Some other type")
     }*/
     println(1.asInstanceOf[Double])
-    println(Rule(true, EQ(), true).evaluate())
-    println(Rule(true, EQ(), false).evaluate())
+    println(Rule(true, EQ, true).evaluate())
+    println(Rule(true, EQ, false).evaluate())
 
-    val trueRule = Rule(true, EQ(), true) //true
-    val falseRule = Rule(false, EQ(), true) //false
-    val complexRule = Rule(trueRule, NEQ(), falseRule) //true
-    val anotherComplexRule = Rule(trueRule, NEQ(), complexRule)
+    val trueRule = Rule(true, EQ, true) //true
+    val falseRule = Rule(false, EQ, true) //false
+    val complexRule = Rule(trueRule, NEQ, falseRule) //true
+    val anotherComplexRule = Rule(trueRule, NEQ, complexRule)
     print(anotherComplexRule.evaluate)
     println(s"Vijay" > "OMG")
 
