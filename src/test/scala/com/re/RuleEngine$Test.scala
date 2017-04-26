@@ -1,7 +1,8 @@
 package com.re
 
-import com.re.grammar.Grammar.RuleEvaluator
-import com.re.grammar._
+import com.re.rule.Rule
+import com.re.rule.grammar.Grammar.RuleEvaluator
+import com.re.rule.grammar._
 
 /**
   * Created by vparashar on 12/27/2016 AD.

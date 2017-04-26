@@ -1,7 +1,7 @@
-package com.re.grammar
+package com.re.rule.grammar
 
-import com.re.grammar.ExpressionConverter._
-import com.re.grammar.Grammar.Expression
+import com.re.rule.grammar.ExpressionConverter._
+import com.re.rule.grammar.Grammar.Expression
 
 /**
   * Created by vparashar on 12/27/2016 AD.

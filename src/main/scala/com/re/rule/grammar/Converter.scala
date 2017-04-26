@@ -1,6 +1,6 @@
-package com.re.grammar
+package com.re.rule.grammar
 
-import com.re.grammar.Grammar.Expression
+import com.re.rule.grammar.Grammar.Expression
 
 /**
   * Created by vparashar on 12/28/2016 AD.
