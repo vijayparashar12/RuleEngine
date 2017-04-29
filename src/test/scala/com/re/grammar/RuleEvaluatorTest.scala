@@ -1,5 +1,6 @@
-package com.re.rule.grammar
+package com.re.grammar
 
+import com.re.grammar.operators.EQ
 import com.re.rule.Rule
 import org.specs2.mutable.Specification
 

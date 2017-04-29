@@ -1,23 +1,23 @@
-#Rule Engine
+# Rule Engine
 - Actionable Rules based on custom parameter.
 - Based on infix expression evaluation.
 - Extensible with simple DSL for new operator definition. 
 
- #Sample Rule
+ ### Sample Rule
 ```json
 {
   "lhs": "$price",
-  "op" : "GTE"
+  "op" : "GTE",
   "rhs": "200"
 }
 ```
 
-#Complex Rule
+### Complex Rule
 ```json
 {
     "lhs": {
         "lhs": "$price",
-        "op": "GTE"
+        "op": "GTE",
         "rhs": "200"
     },
     "op": "AND",
@@ -26,5 +26,24 @@
         "op": "GT",
         "rhs": "100"
     }
+}
+```
+
+### JSON Rules 
+
+```json
+{
+	"rule": {
+		"lhs": "$price",
+		"op": "GTE",
+		"rhs": 1000
+	},
+	"action": {
+		"result": {
+			"lhs": "$price",
+			"op": "DISCOUNT",
+			"rhs": 10
+		}
+	}
 }
 ```

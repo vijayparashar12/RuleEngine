@@ -1,7 +1,8 @@
 package com.re.rule
 
-import com.re.rule.grammar.GT
-import com.re.rule.grammar.Grammar._
+import com.re.action.Action
+import com.re.grammar.Grammar._
+import com.re.grammar.operators.GT
 import org.specs2.mutable.Specification
 
 /**
@@ -14,18 +15,21 @@ class ActionableRuleTest extends Specification {
       val action = DiscountAction(1500d, 10d)
       val parameters = Map("price" -> 1500)
       val actionableRule = ActionableRule(discount, action, parameters)
-      actionableRule.evaluate
-      action.result mustEqual 1350d
+      actionableRule.evaluate mustEqual 1350d
+    }
+
+    "if evaluates false skips action" in {
+      val discount = Rule("$price", GT, 1000)
+      val action = DiscountAction(1500d, 10d)
+      val parameters = Map("price" -> 900)
+      val actionableRule = ActionableRule(discount, action, parameters)
+      val result = actionableRule.evaluate
+      result mustEqual 1350d
     }
   }
 
 }
 
 case class DiscountAction(price: Double, discount: Double) extends Action {
-
-  var result = 0d
-
-  override def execute = {
-    result = price * (1 - discount / 100)
-  }
+  override def execute = price * (1 - discount / 100)
 }

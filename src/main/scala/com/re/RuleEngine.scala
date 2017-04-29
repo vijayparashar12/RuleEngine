@@ -1,8 +1,8 @@
 package com.re
 
+import com.re.grammar.Grammar.RuleEvaluator
+import com.re.grammar.operators.{EQ, NEQ}
 import com.re.rule.Rule
-import com.re.rule.grammar.Grammar.RuleEvaluator
-import com.re.rule.grammar.{EQ, NEQ}
 
 
 /**

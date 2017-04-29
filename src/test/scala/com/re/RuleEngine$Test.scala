@@ -1,8 +1,9 @@
 package com.re
 
 import com.re.rule.Rule
-import com.re.rule.grammar.Grammar.RuleEvaluator
-import com.re.rule.grammar._
+import com.re.grammar.Grammar.RuleEvaluator
+import com.re.grammar._
+import com.re.grammar.operators.{AND, EQ, NEQ, OR}
 
 /**
   * Created by vparashar on 12/27/2016 AD.

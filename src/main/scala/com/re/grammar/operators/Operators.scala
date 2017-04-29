@@ -1,13 +1,13 @@
-package com.re.rule.grammar
+package com.re.grammar.operators
 
-import com.re.rule.grammar.ExpressionConverter._
-import com.re.rule.grammar.Grammar.Expression
+import com.re.grammar.Grammar.{Expression, Result}
+import com.re.rule.ExpressionConverter._
 
 /**
   * Created by vparashar on 12/27/2016 AD.
   */
 trait Operator {
-  def execute(lhs: Expression, rhs: Expression): Boolean
+  def execute(lhs: Expression, rhs: Expression): Result
 }
 
 case object EQ extends Operator {
@@ -42,6 +42,14 @@ case object LTE extends Operator {
 
 case object LT extends Operator {
   override def execute(lhs: Expression, rhs: Expression): Boolean = lhs.toDouble < rhs.toDouble
+}
+
+case object PERCENTAGE extends Operator {
+  override def execute(lhs: Expression, rhs: Expression): Double = lhs.toDouble * (1 - (rhs.toDouble / 100))
+}
+
+case object FLAT extends Operator {
+  override def execute(lhs: Expression, rhs: Expression): Double = lhs.toDouble - rhs.toDouble
 }
 
 
