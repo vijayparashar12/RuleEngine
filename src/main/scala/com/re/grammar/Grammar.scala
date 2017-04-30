@@ -44,12 +44,13 @@ object Grammar {
   }
 
   implicit class ActionableRuleEvaluator(actionableRule: ActionableRule) {
-    def evaluate(): Result = {
+    def evaluate(): Option[Result] = {
       import com.re.action.ActionTransformer.RuleBasedActionTransformer
       actionableRule.rule.transform(actionableRule.namedParameters).evaluate() match {
-        case true => actionableRule.action
+        case true => Some(actionableRule.action
           .transform(actionableRule.namedParameters)
-          .execute()
+          .execute())
+        case false => None
       }
     }
   }

@@ -17,7 +17,7 @@ class RuleBasedActionTest extends Specification {
       val action = RuleBasedAction(result = discountResult)
       val parameters = Map("price" -> 1500)
       val actionableRule = ActionableRule(discountRule, action, parameters)
-      actionableRule.evaluate mustEqual 1350d
+      actionableRule.evaluate.getOrElse(0d) mustEqual 1350d
     }
 
   }

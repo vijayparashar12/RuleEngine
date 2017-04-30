@@ -15,16 +15,16 @@ class ActionableRuleTest extends Specification {
       val action = DiscountAction(1500d, 10d)
       val parameters = Map("price" -> 1500)
       val actionableRule = ActionableRule(discount, action, parameters)
-      actionableRule.evaluate mustEqual 1350d
+      actionableRule.evaluate.getOrElse(0d) mustEqual 1350d
     }
 
-    "if evaluates false skips action" in {
+    "if evaluates false skips action and returns None" in {
       val discount = Rule("$price", GT, 1000)
       val action = DiscountAction(1500d, 10d)
       val parameters = Map("price" -> 900)
       val actionableRule = ActionableRule(discount, action, parameters)
       val result = actionableRule.evaluate
-      result mustEqual 1350d
+      result mustEqual None
     }
   }
 
