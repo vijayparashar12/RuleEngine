@@ -1,4 +1,4 @@
-package com.re.grammar
+package com.re.rule
 
 import com.re.grammar.Grammar.Expression
 
@@ -11,11 +11,11 @@ object ExpressionConverter {
     def toDouble: Double = {
       val doubleValue =
         exp match {
-          case s: Short => Option(s.toDouble)
-          case i: Int => Option(i.toDouble)
-          case l: Long => Option(l.toDouble)
-          case f: Float => Option(f.toDouble)
-          case d: Double => Option(d)
+          case s: Short => Some(s.toDouble)
+          case i: Int => Some(i.toDouble)
+          case l: Long => Some(l.toDouble)
+          case f: Float => Some(f.toDouble)
+          case d: Double => Some(d)
           case _ => None
         }
       doubleValue.getOrElse(throw new NumberFormatException("Unsupported type for this operation"))
@@ -23,7 +23,7 @@ object ExpressionConverter {
 
     def toBoolean: Boolean = {
       val booleanValue = exp match {
-        case b: Boolean => Option(b)
+        case b: Boolean => Some(b)
         case _ => None
       }
       booleanValue.getOrElse(throw new Exception("Operator accepts only boolean parameters"))

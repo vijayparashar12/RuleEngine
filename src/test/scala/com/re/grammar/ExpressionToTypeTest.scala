@@ -1,6 +1,6 @@
 package com.re.grammar
 
-import com.re.grammar.ExpressionConverter._
+import com.re.rule.ExpressionConverter._
 import com.re.grammar.Grammar._
 import org.specs2.mutable.Specification
 
