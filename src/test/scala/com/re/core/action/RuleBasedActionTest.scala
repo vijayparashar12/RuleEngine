@@ -1,8 +1,8 @@
-package com.re.action
+package com.re.core.action
 
-import com.re.grammar.Grammar.ActionableRuleEvaluator
-import com.re.grammar.operators.{GT, PERCENTAGE}
-import com.re.rule.{ActionableRule, Rule}
+import com.re.core.rule.grammar.Grammar.ActionableRuleEvaluator
+import com.re.core.rule.grammar.operators.{GT, PERCENTAGE}
+import com.re.core.rule.{ActionableRule, Rule}
 import org.specs2.mutable.Specification
 
 /**

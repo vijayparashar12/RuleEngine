@@ -3,7 +3,7 @@
 - Based on infix expression evaluation.
 - Extensible with simple DSL for new operator definition. 
 
- ### Sample Rule
+ ### Sample Rule 
 ```json
 {
   "lhs": "$price",

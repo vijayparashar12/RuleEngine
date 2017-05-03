@@ -1,7 +1,7 @@
-package com.re.grammar
+package com.re.core.rule.grammar
 
-import com.re.rule.ExpressionConverter._
-import com.re.grammar.Grammar._
+import com.re.core.rule.grammar.ExpressionConverter._
+import com.re.core.rule.grammar.Grammar._
 import org.specs2.mutable.Specification
 
 /**

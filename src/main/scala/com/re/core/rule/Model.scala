@@ -1,8 +1,8 @@
-package com.re.rule
+package com.re.core.rule
 
-import com.re.action.Action
-import com.re.grammar.Grammar.Expression
-import com.re.grammar.operators.Operator
+import com.re.core.action.Action
+import com.re.core.rule.grammar.Grammar.Expression
+import com.re.core.rule.grammar.operators.Operator
 
 
 case class Rule(lhs: Expression, op: Operator, rhs: Expression)

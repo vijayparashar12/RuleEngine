@@ -1,6 +1,6 @@
-package com.re.action
+package com.re.core.action
 
-import com.re.grammar.Grammar.Result
+import com.re.core.rule.grammar.Grammar.Result
 
 /**
   * Created by vparashar on 26/04/2017.
@@ -13,7 +13,7 @@ object ActionTransformer {
 
   implicit class RuleBasedActionTransformer(action: Action) {
     def transform(namedParameters: Map[String, AnyVal]): Action = {
-      import com.re.grammar.Grammar.RuleEvaluator
+      import com.re.core.rule.grammar.Grammar.RuleEvaluator
       action match {
         case ruleBasedAction: RuleBasedAction => ruleBasedAction.copy(result = ruleBasedAction.result.transform(namedParameters))
         case _ => action

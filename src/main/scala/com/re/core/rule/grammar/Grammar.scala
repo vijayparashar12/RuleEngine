@@ -1,7 +1,7 @@
-package com.re.grammar
+package com.re.core.rule.grammar
 
-import com.re.grammar.operators.Operator
-import com.re.rule.{ActionableRule, Rule}
+import com.re.core.rule.grammar.operators.Operator
+import com.re.core.rule.{ActionableRule, Rule}
 
 /**
   * Created by vparashar on 12/27/2016 AD.
@@ -44,11 +44,14 @@ object Grammar {
   }
 
   implicit class ActionableRuleEvaluator(actionableRule: ActionableRule) {
+
+    import com.re.core.action.ActionTransformer.RuleBasedActionTransformer
+
     def evaluate(): Option[Result] = {
-      import com.re.action.ActionTransformer.RuleBasedActionTransformer
-      actionableRule.rule.transform(actionableRule.namedParameters).evaluate() match {
-        case true => Some(actionableRule.action
-          .transform(actionableRule.namedParameters)
+      actionableRule.rule.
+        transform(actionableRule.namedParameters)
+        .evaluate() match {
+        case true => Some(actionableRule.action.transform(actionableRule.namedParameters)
           .execute())
         case false => None
       }

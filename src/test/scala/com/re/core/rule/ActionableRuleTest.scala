@@ -1,8 +1,8 @@
-package com.re.rule
+package com.re.core.rule
 
-import com.re.action.Action
-import com.re.grammar.Grammar._
-import com.re.grammar.operators.GT
+import com.re.core.action.Action
+import com.re.core.rule.grammar.Grammar._
+import com.re.core.rule.grammar.operators.GT
 import org.specs2.mutable.Specification
 
 /**
