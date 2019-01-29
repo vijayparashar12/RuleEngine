@@ -12,6 +12,8 @@
 }
 ```
 
+every rule evaluation return boolean result. 
+
 ### Complex Rule
 ```json
 {
@@ -29,7 +31,11 @@
 }
 ```
 
-### JSON Rules 
+DSL allows custom operators to be included in rule engine based on requirements. 
+
+### Actionable Rules 
+
+If a rule is evaluated to be true then action is preformes , other wise execution of the action is skiped. 
 
 ```json
 {
